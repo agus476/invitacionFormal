@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aceptaste! ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6b81, #ff9ff3);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        .heart {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 8s infinite;
+            opacity: 0;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -12.5px;
+            left: 0;
+        }
+        .heart::after {
+            left: -12.5px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Aceptaste salir con este papucho! 😎❤️</h1>
+    <img src="agustin.png" alt="Tu Foto">
+     <p>Ahora estamos oficialmente en modo romance. 😏✨</p>
+    
+    <script>
+        // Corazones flotantes
+        for (let i = 0; i < 25; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 6 + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
