@@ -17,15 +17,20 @@
             justify-content: space-around;
             align-items: center;
             padding: 20px;
+            margin: 0;
         }
+
         h1 {
             font-size: 3em;
             margin: 20px 0;
+            word-wrap: break-word;
         }
+
         p {
             font-size: 1.5em;
             margin: 20px 0;
         }
+
         img {
             width: 350px;
             height: 350px;
@@ -34,6 +39,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             margin: 20px;
         }
+
         .heart {
             position: absolute;
             width: 25px;
@@ -43,6 +49,7 @@
             animation: float 8s infinite;
             opacity: 0;
         }
+
         .heart::before,
         .heart::after {
             content: '';
@@ -52,14 +59,17 @@
             background: red;
             border-radius: 50%;
         }
+
         .heart::before {
             top: -12.5px;
             left: 0;
         }
+
         .heart::after {
             left: -12.5px;
             top: 0;
         }
+
         @keyframes float {
             0% {
                 transform: translateY(100vh) rotate(45deg);
@@ -73,12 +83,43 @@
                 opacity: 0;
             }
         }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            p {
+                font-size: 1.3em;
+            }
+
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>¡Aceptaste salir con este papucho! 😎❤️</h1>
     <img src="agustin.png" alt="Tu Foto">
-     <p>Ahora estamos oficialmente en modo romance. 😏✨</p>
+    <p>Ahora estamos oficialmente en modo romance. 😏✨</p>
     
     <script>
         // Corazones flotantes

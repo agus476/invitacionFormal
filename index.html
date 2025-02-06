@@ -17,15 +17,20 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            margin: 0;
         }
+
         h1 {
             font-size: 2.5em;
             margin: 20px 0;
+            word-wrap: break-word;
         }
+
         p {
             font-size: 1.5em;
             margin-bottom: 40px;
         }
+
         button {
             background: #ff4757;
             border: none;
@@ -37,17 +42,20 @@
             transition: background 0.3s;
             margin: 10px;
         }
+
         button:hover {
             background: #ff6b81;
         }
+
         #no-btn {
             position: absolute;
         }
+
         #div1 {
-            
             margin-bottom: 250px; /* Separación adicional */
             z-index: 1;
         }
+
         .heart {
             position: absolute;
             width: 25px;
@@ -56,8 +64,8 @@
             transform: rotate(45deg);
             animation: float 8s infinite;
             opacity: 0;
-
         }
+
         .heart::before,
         .heart::after {
             content: '';
@@ -67,36 +75,72 @@
             background: red;
             border-radius: 50%;
         }
+
         .heart::before {
             top: -12.5px;
             left: 0;
         }
+
         .heart::after {
             left: -12.5px;
             top: 0;
         }
+
         @keyframes float {
             0% {
                 transform: translateY(100vh) rotate(45deg);
                 opacity: 0;
             }
+
             50% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-10vh) rotate(45deg);
                 opacity: 0;
             }
         }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            button {
+                font-size: 0.9em;
+                padding: 10px 25px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>¿Queres ser mi Valentín? 💖</h1>
+    <h1>¿Serás mi Valentín? 💖</h1>
     <div id="div1">
-        <p>No me podes decir que no... 😏</p>
+        <p>No puedes decir que no... 😏</p>
     </div>
     <button onclick="window.location.href='aceptado.html'">Sí, por supuesto ❤️</button>
-    <button id="no-btn" onmouseover="moverBoton()">No, ni loca 😜</button>
+    <button id="no-btn" onmouseover="moverBoton()">No, ni loco 😜</button>
 
     <script>
         function moverBoton() {
